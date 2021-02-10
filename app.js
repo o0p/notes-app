@@ -7,6 +7,8 @@ function addNewNote(text = '') {
     note.classList.add('note');
 
     note.innerHTML = `
+    <div class="note">
+
     <div class="tools">
             <button class="edit">
                 <i class="fas fa-edit"></i>
@@ -18,7 +20,14 @@ function addNewNote(text = '') {
 
         <div class="main ${text ? "" : "hidden"}"></div>
             <textarea class="${text ? "hidden" : ""}"></textarea>
+    </div>
     `
+    const edditBtn = note.querySelector('.eddit');
+    const deleteBtn = note.querySelector('.delete');
+    const main = note.querySelector('.main');
+    const textArea = note.querySelector('.textarea');
+
+    deleteBtn.addEventListener('click', () => note.remove());
 
     document.body.appendChild(note);
 }
