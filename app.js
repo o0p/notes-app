@@ -38,3 +38,10 @@ function addNewNote(text = '') {
     });
     document.body.appendChild(note);
 };
+
+function updateLS() {
+    const notesText = document.querySelectorAll('textarea');
+    const note = [];
+    notesText.forEach(note => notes.push(note.value));
+    localStorage('notes', JSON.stringify(notes));
+};
