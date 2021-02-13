@@ -18,7 +18,6 @@ function addNewNote(text = '') {
             <i class="fas fa-trash-alt"></i>
         </button>
     </div>
-
     <div class="main ${text ? "" : "hidden"}"></div>
     <textarea class="${text ? "hidden" : ""}"></textarea>
     `
@@ -43,10 +42,9 @@ function addNewNote(text = '') {
     });
     document.body.appendChild(note);
 };
-
 function updateLS() {
     const notesText = document.querySelectorAll('textarea');
-    const note = []
+    const notes = [];
     notesText.forEach(note => notes.push(note.value));
     localStorage.setItem('notes', JSON.stringify(notes));
 };
